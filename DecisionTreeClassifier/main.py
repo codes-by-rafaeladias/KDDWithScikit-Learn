@@ -7,12 +7,13 @@ from sklearn.metrics import accuracy_score
 TRAIN = "DecisionTreeClassifier\\files\\lentes_treinamento.xlsx"
 TEST = "DecisionTreeClassifier\\files\\lentes_teste.xlsx"
 
-#1° passo - pré-processamento
 def main(test, train):
     df_train = pandas.read_excel(train)
     print("Treinamento:", df_train.head()) 
     df_test = pandas.read_excel(test)
     print("Teste:", df_test.head()) 
+    
+    #1° passo - pré-processamento
     
     X_train = df_train.drop(columns=["LENTES"]) 
     y_train = df_train["LENTES"]  
